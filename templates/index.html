@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detecting  of harmful malicious website URL links by using intelligent ml models</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('{{ url_for('static', filename='inp1.gif') }}');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin: 10px;
+            color: #ffffff;
+            width: 260px;
+            text-transform: uppercase;
+        }
+
+        /* Button 1 - About (Blue) */
+        .btn-about {
+            background-color: #2196f3;
+        }
+
+        /* Button 2 - Contact (Green) */
+        .btn-contact {
+            background-color: #4caf50;
+        }
+
+        /* Button 3 - Cyber Attack Detection (Red) */
+        .btn-detect {
+            background-color: #f44336;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .emoji {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detecting  of harmful malicious website URL links by using intelligent ml models</h1>
+
+    <!-- About Button -->
+    <button class="btn btn-about" onclick="location.href='/about'">
+        <span class="emoji">ℹ️</span> About
+    </button>
+
+    <!-- Contact Button -->
+    <button class="btn btn-contact" onclick="location.href='/contact'">
+        <span class="emoji">📞</span> Contact Details
+    </button>
+
+    <!-- Cyber Attack Detection Button -->
+    <button class="btn btn-detect" onclick="location.href='/detect'">
+        <span class="emoji">🛡️</span> Detecting  of harmful malicious website URL links 
+    </button>
+</body>
+</html>

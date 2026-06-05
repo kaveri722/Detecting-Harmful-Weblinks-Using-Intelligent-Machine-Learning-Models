@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📞 Contact Details</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('{{ url_for('static', filename='inp1.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin: 10px;
+            color: #ffffff;
+            text-transform: uppercase;
+            width: 260px;
+        }
+
+        /* Button Colors */
+        .btn-home { background-color: #2196f3; }  /* Blue */
+        .btn-call { background-color: #4caf50; }  /* Green */
+        .btn-mail { background-color: #f44336; }  /* Red */
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .emoji {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📞 Contact Details</h1>
+
+    <p>👨‍🎓 <b>Name:</b> GATES STUDENT</p> 
+    <p>📱 <b>Phone:</b> +91 93456 78190</p> 
+    <p>📧 <b>Email:</b> Student@gmail.com</p> 
+
+    <button class="btn btn-home" onclick="location.href='/'">🏠 Return Home</button>
+    <button class="btn btn-call" onclick="window.location.href='tel:+919345678190'">📞 Call Now</button>
+    <button class="btn btn-mail" onclick="window.location.href='mailto:Student@gmail.com'">✉️ Send Email</button>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About malicious url detect</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            background-image: url('{{ url_for('static', filename='inp3.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #ffeb3b;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        ol, ul {
+            text-align: left;
+            font-size: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 85%;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .content-box {
+            text-align: left;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 25px;
+            border-radius: 15px;
+            width: 85%;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-top: 20px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #1a237e, #0d47a1);
+            padding: 25px;
+            border-radius: 15px;
+            width: 85%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            margin-top: 30px;
+        }
+
+        .highlight-box h2 {
+            color: #00e5ff;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 30px;
+            color: #ffffff;
+            width: 260px;
+            background-color: #2196f3;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+<h1>🛡️ About harmful malicious website URL links using intelligent ML models</h1>
+
+<ol>
+    <li>🎣 <b>Phishing Attacks:</b> Trick users into giving personal information.</li>
+    <li>💀 <b>Malware:</b> Includes viruses, worms, and trojans.</li>
+    <li>🔒 <b>Ransomware:</b> Encrypts data and demands payment.</li>
+    <li>🌐 <b>DDoS Attacks:</b> Overwhelm networks and cause downtime.</li>
+    <li>🎭 <b>Social Engineering:</b> Manipulates victims into revealing data.</li>
+    <li>⚠️ <b>Zero-Day Attacks:</b> Exploit unknown security flaws.</li>
+    <li>📡 <b>MITM Attacks:</b> Intercept communication.</li>
+    <li>💻 <b>SQL Injection:</b> Targets databases.</li>
+    <li>🔑 <b>Brute Force Attacks:</b> Password cracking attempts.</li>
+    <li>🕵️‍♂️ <b>Insider Threats:</b> Risks from trusted users.</li>
+</ol>
+
+<!-- 🔥 NEW HIGHLIGHTED SECTION -->
+<div class="highlight-box">
+    <h2>🚀 Project Workflow & Instructions</h2>
+    <ul>
+        <li>📝 <b>Step 1 – Enter URL:</b> User provides the website URL in the detection page.</li>
+        <li>🔍 <b>Step 2 – Protocol Extraction:</b> System extracts the protocol (http, https, ftp, etc.).</li>
+        <li>🔐 <b>Step 3 – Protocol Verification:</b>  
+            <ul>
+                <li>✅ Safe Protocols: <b>http, https, ftp, sftp</b></li>
+                <li>⚠️ Unsafe Protocols: <b>file, javascript, data, unknown</b></li>
+            </ul>
+        </li>
+        <li>⚙️ <b>Step 4 – ML-Based Analysis:</b> Intelligent model analyzes URL behavior & structure.</li>
+        <li>📊 <b>Step 5 – Risk Classification:</b> Harmful links are classified as <b>Low / Medium / High</b>.</li>
+        <li>🛡️ <b>Step 6 – Safety Suggestions:</b> System provides security recommendations.</li>
+        <li>💾 <b>Step 7 – Result Storage:</b> Input & output are saved in the database.</li>
+        <li>📜 <b>Step 8 – Result Review:</b> User can view all previous detection results.</li>
+    </ul>
+</div>
+
+<div class="content-box">
+    <h2>📌 Introduction</h2>
+    <p>
+        Cybersecurity is an essential aspect of modern digital infrastructure. Machine learning enables intelligent
+        detection of malicious URLs by learning patterns from past attacks and adapting to new threats.
+    </p>
+
+    <h2>⚡ Advantages of ML-Based Detection</h2>
+    <ul>
+        <li>⏳ Real-time threat identification</li>
+        <li>🎯 High accuracy & reduced false alarms</li>
+        <li>🤖 Automated security decisions</li>
+        <li>📈 Scalable to large datasets</li>
+        <li>🧠 Adaptive learning capability</li>
+    </ul>
+
+    <h2>⚠️ Challenges</h2>
+    <ul>
+        <li>⚖️ Imbalanced datasets</li>
+        <li>🔄 Constantly evolving attacks</li>
+        <li>⚡ Computational requirements</li>
+        <li>🔐 Privacy & data security concerns</li>
+    </ul>
+
+    <h2>📌 Conclusion</h2>
+    <p>
+        This project demonstrates how intelligent ML models combined with protocol verification
+        can effectively detect harmful malicious website URLs, improving online safety and awareness.
+    </p>
+</div>
+
+<button class="btn" onclick="location.href='/'">🏠 Return Home</button>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>malicious  Detection</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('{{ url_for('static', filename='inp3.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        label {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #ffeb3b;
+            text-align: left;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            background-color: #eeeeee;
+            color: #333;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+            outline: none;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin: 10px;
+            color: #ffffff;
+            text-transform: uppercase;
+            width: 260px;
+        }
+
+        /* Button Colors */
+        .btn-detect { background-color: #4caf50; }  /* Green */
+        .btn-home { background-color: #2196f3; }    /* Blue */
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .emoji {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Detecting  of harmful malicious website URL links by using intelligent ml models</h1>
+
+    <form action="/predict" method="POST">
+        <label for="url">🌐 Enter URL:</label>
+        <input type="text" id="url" name="url" required>
+
+        <label for="protocol">🔒 Select Protocol:</label>
+        <select id="protocol" name="protocol">
+            <option value="http">HTTP</option>
+            <option value="https">HTTPS</option>
+            <option value="ftp">FTP</option>
+            <option value="sftp">SFTP</option>
+            <option value="smtp">SMTP</option>
+            <option value="pop3">POP3</option>
+            <option value="imap">IMAP</option>
+            <option value="dns">DNS</option>
+            <option value="snmp">SNMP</option>
+            <option value="telnet">Telnet</option>
+            <option value="rdp">RDP</option>
+            <option value="icmp">ICMP</option>
+            <option value="HTTP">http</option>
+        </select>
+
+        <button type="submit" class="btn btn-detect">🚀 Detect</button>
+    </form>
+
+    <br>
+    <button class="btn btn-home" onclick="location.href='/'">🏠 Return Home</button>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Detection Result</title>
+
+<style>
+body{
+    font-family:'Segoe UI',Tahoma;
+    background:linear-gradient(135deg,#1a2a6c,#b21f1f,#fdbb2d);
+    color:white;
+    height:100vh;
+    margin:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.box{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(14px);
+    padding:40px;
+    border-radius:20px;
+    width:520px;
+    text-align:center;
+}
+
+.good{color:#00e676;font-size:22px;font-weight:bold;}
+.bad{color:#ff5252;font-size:22px;font-weight:bold;}
+
+.suggest{
+    background:rgba(0,0,0,0.4);
+    padding:15px;
+    border-radius:12px;
+    margin-top:15px;
+    text-align:left;
+}
+
+button{
+    padding:12px 30px;
+    margin:15px 10px;
+    border-radius:25px;
+    border:none;
+    cursor:pointer;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    color:white;
+    font-weight:bold;
+}
+
+/* -------- TIMER METER -------- */
+.progress{
+    width:100%;
+    background:#333;
+    border-radius:30px;
+    margin-top:15px;
+}
+
+.progress-bar{
+    height:20px;
+    width:0%;
+    background:#00e676;
+    border-radius:30px;
+    transition:width 2s ease;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>🔍 Detection Result</h2>
+
+<p>🔗 <b>Protocol:</b> {{ protocol }}</p>
+<p>🌐 <b>URL:</b><br>{{ url }}</p>
+
+<div class="{% if prediction == 'Harmful link' %}bad{% else %}good{% endif %}">
+    {{ prediction }}
+</div>
+
+<!-- ✅ ADDED RISK PERCENTAGE -->
+<h3>Risk Percentage : {{ risk_percentage }}%</h3>
+
+<!-- ✅ TIMER METER -->
+<div class="progress">
+    <div id="riskBar" class="progress-bar"></div>
+</div>
+
+{% if prediction == 'Harmful link' %}
+<p>⚠️ <b>Risk Level:</b> {{ risk_level }}</p>
+
+<div class="suggest">
+<b>Safety Suggestions:</b>
+<ul>
+<li>{{ suggestion1 }}</li>
+<li>{{ suggestion2 }}</li>
+</ul>
+</div>
+{% endif %}
+
+<button onclick="location.href='/detect'">🔄 Try Again</button>
+
+<button onclick="location.href='/previous-results'">
+📜 View All Previous Results
+</button>
+
+<!-- ✅ NEW VISUALIZATION BUTTON -->
+<button onclick="location.href='/visualization'">
+📊 Visualization
+</button>
+
+</div>
+
+<script>
+window.onload=function(){
+
+    let prediction="{{ prediction }}";
+    let level="{{ risk_level }}";
+    let percent={{ risk_percentage|default(0) }};
+
+    /* TIMER METER ANIMATION */
+    setTimeout(()=>{
+        document.getElementById("riskBar").style.width=percent+"%";
+    },400);
+
+    if(prediction==="Harmful link"){
+        alert("⚠️ Harmful Link Detected!\nRisk Level: "+level);
+    }else{
+        alert("✅ Safe Link Detected!");
+    }
+}
+</script>
+
+</body>
+</html>

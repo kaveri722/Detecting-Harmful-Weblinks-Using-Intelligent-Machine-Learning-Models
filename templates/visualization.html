@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Visualization Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body{
+    font-family:Segoe UI;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    margin:0;
+}
+
+.container{
+    width:85%;
+    margin:auto;
+}
+
+canvas{
+    background:white;
+    border-radius:12px;
+    margin-top:30px;
+    padding:10px;
+}
+
+button{
+    margin-top:30px;
+    padding:12px 30px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📊 Risk Visualization Dashboard</h1>
+
+<div class="container">
+
+<h3>Risk Timer Meter</h3>
+<canvas id="gaugeChart"></canvas>
+
+<h3>Risk Level Distribution</h3>
+<canvas id="barChart"></canvas>
+
+<h3>Risk Trend Analysis</h3>
+<canvas id="lineChart"></canvas>
+
+<!-- ✅ CHANGED HERE -->
+<button onclick="location.href='/detect'">
+🔙 Back to Prediction Result
+</button>
+
+</div>
+
+<script>
+
+let levels = {{ levels|tojson }};
+let percentages = {{ percentages|tojson }};
+
+let latestRisk = percentages.length > 0 ? percentages[0] : 0;
+
+/* -------- TIMER GAUGE -------- */
+new Chart(document.getElementById("gaugeChart"),{
+    type:'doughnut',
+    data:{
+        labels:["Risk","Safe"],
+        datasets:[{
+            data:[latestRisk,100-latestRisk]
+        }]
+    },
+    options:{
+        circumference:180,
+        rotation:270,
+        plugins:{legend:{display:false}}
+    }
+});
+
+
+/* -------- BAR GRAPH -------- */
+new Chart(document.getElementById("barChart"),{
+    type:'bar',
+    data:{
+        labels:levels,
+        datasets:[{
+            label:"Risk %",
+            data:percentages
+        }]
+    }
+});
+
+
+/* -------- LINE GRAPH -------- */
+new Chart(document.getElementById("lineChart"),{
+    type:'line',
+    data:{
+        labels:levels,
+        datasets:[{
+            label:"Risk Trend",
+            data:percentages,
+            fill:false,
+            tension:0.3
+        }]
+    }
+});
+
+</script>
+
+</body>
+</html>

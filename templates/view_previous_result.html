@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Previous Results</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.08);
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+        }
+
+        th {
+            background: rgba(0,0,0,0.6);
+            font-size: 15px;
+        }
+
+        tr:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 30px;
+            border-radius: 25px;
+            border: none;
+            background: #00c6ff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button:hover {
+            background: #0096c7;
+        }
+    </style>
+</head>
+<body>
+
+<h2>📜 Previous Detection Results</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>URL</th>
+        <th>Protocol</th>
+        <th>Prediction</th>
+        <th>Risk Level</th>
+        <th>Risk %</th>
+        <th>Suggestions</th>
+        <th>Time</th>
+    </tr>
+
+    {% for row in results %}
+    <tr>
+        <td>{{ row[0] }}</td> <!-- ID -->
+        <td>{{ row[1] }}</td> <!-- URL -->
+        <td>{{ row[2] }}</td> <!-- Protocol -->
+        <td>{{ row[3] }}</td> <!-- Prediction -->
+        <td>{{ row[4] }}</td> <!-- Risk Level -->
+        <td>{{ row[5] }}%</td> <!-- Risk Percentage -->
+        <td>{{ row[6] }}<br>{{ row[7] }}</td> <!-- Suggestions -->
+        <td>{{ row[8] }}</td> <!-- Correct Timestamp -->
+    </tr>
+    {% endfor %}
+</table>
+
+<button onclick="location.href='/visualization'">🔙 Return to Detect</button>
+
+</body>
+</html>
